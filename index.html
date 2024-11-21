@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transition</title>
+    <link rel="stylesheet" href="./css/basic-settings.css">
+    <style>
+        .flex {
+            /* basic styling */
+            width: 100vw;
+            height: 100vh;
+            background-color: #0D5661;
+            font: 14px Arial;
+
+            /* flexbox setup */
+            display: flex;
+            flex-direction: row;
+        }
+
+        .flex>div {
+            flex: 1 1 auto;
+            width: 30px;
+            /* To make the transition work nicely. (Transitions to/from
+                    "width:auto" are buggy in Gecko and Webkit, at least.
+                    See http://bugzil.la/731886 for more info.) */
+            transition: 0.7s ease-out;
+        }
+
+        /* colors */
+        .flex>div:nth-child(1) {
+            background: #6E552F;
+            clip-path: polygon(0 0, 60% 0, 100% 100%, 0 100%);
+        }
+
+        .flex>div:nth-child(2) {
+            /* 中間空白區 */
+        }
+
+        .flex>div:nth-child(3) {
+            background: #CB4042;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%);
+        }
+
+        .flex>div:hover {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <p>Flexbox nuovo</p> -->
+    <div class="flex">
+        <div><a href="./html/home.html"><img src="./images/ramen-01.png" alt="ramen-01"></a></div>
+        <div><a href="./html/home.html"><img src="./images/ramen-02.png" alt="ramen-02"></a></div>
+        <div><a href="./html/home.html"><img src="./images/ramen-03.png" alt="ramen-03"></a></div>
+    </div>
+</body>
+</html>
